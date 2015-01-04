@@ -26,7 +26,7 @@ if( strlen(getenv("DB_NAME")) > 0 ) {
 if( strlen(getenv("DB_USER")) > 0 ) {
   define('DB_USER', getenv("DB_USER"));
 } else {
-  define('DB_USER', 'admin');
+  define('DB_USER', 'wordpress');
 }
 
 /** MySQL database password */
@@ -57,14 +57,14 @@ define('WP_USE_EXT_MYSQL', true);
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'roolaeth3cheuhooxagha6TheaHaidai9EeThaBeiZal2thie8aexohli0IQueiyu');
-define('SECURE_AUTH_KEY',  'eiwiujaejahlaima2faeta2shooz9phoo6LiaFam3phie9ho5iengie3oogee7roo');
-define('LOGGED_IN_KEY',    'Ru6Meih7iw3Sa1dux3EYaMah7thohnaebahghoh6ohlaitirahk3moTh5tihahsie');
-define('NONCE_KEY',        'phe8ew8eicethi9eiHash7ea1bu8nahch7zo6doo4ahngaeruaJoa8ohy6wah0Zae');
-define('AUTH_SALT',        'tiZ0Amae6chah2quee1thohHaeleex3neeZeje1uph9oobufei9noLee9Wo8heeth');
-define('SECURE_AUTH_SALT', 'aekooBae9quaivai7va4rai6zahyiechainaezum2Ighoag5aa2vee9phaiG7ohWu');
-define('LOGGED_IN_SALT',   'poquoveichahr4Uquijievae5Ulie8boh3Oke3eezo6ogh7zie6thahthaiphooDi');
-define('NONCE_SALT',       'eecaequeil0pei1egequai3Aghooluf9eighuj2Chaheo4uethaethooPh6Ohc0da');
+define('AUTH_KEY',         '9cee0cf855b4d4a98b3687a0cd2064a594e53be1');
+define('SECURE_AUTH_KEY',  '4c31f511c853992460fccb5dff0e05b07f3e81b6');
+define('LOGGED_IN_KEY',    '617288d16f26cb33f876b3dd1a1f9ac732d9ac39');
+define('NONCE_KEY',        'f0633896eb8c6a049db41b631ff43aa47e7245db');
+define('AUTH_SALT',        '4770a49cdeb5f4cd7b72da9c4b0655c37a5e70e5');
+define('SECURE_AUTH_SALT', '8cd1f20b7db2efdef11193bd502045c246895333');
+define('LOGGED_IN_SALT',   'f78241a8e1ab69658e0af6facc99c9552f134423');
+define('NONCE_SALT',       '9d102d81461ed7cefb5eaf3c6443c1ca45baa0f1');
 
 /**#@-*/
 
@@ -84,7 +84,8 @@ $table_prefix  = 'wp_';
  * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
  * language support.
  */
-define('WPLANG', '');
+define('WP_CACHE',true);
+define ('WPLANG', 'zh_CN');
 
 /**
  * For developers: WordPress debugging mode.

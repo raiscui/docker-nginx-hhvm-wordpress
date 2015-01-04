@@ -1,6 +1,6 @@
 FROM phusion/baseimage:0.9.11
 MAINTAINER Philipz <philipzheng@gmail.com>
-
+RUN sudo add-apt-repository ppa:rtcamp/nginx
 RUN apt-get update
 RUN apt-get -y upgrade
 

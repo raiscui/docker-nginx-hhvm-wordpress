@@ -4,8 +4,10 @@ MAINTAINER Elijah Zupancic <elijah@zupancic.name>
 
 # We group all of the apt commands together here so that our image size doesn't bloat.
 # Below we:
-# 1. Update and upgrade existing packages.
-# 2.
+# 1. Update and upgrade existing packages
+# 2. Install needed base packages
+# 3. Install HHVM
+# 4. Clean up
 RUN add-apt-repository ppa:rtcamp/nginx && \
     apt-get update && \
     apt-get -y upgrade && \
@@ -50,7 +52,7 @@ RUN echo 'error_log = syslog' >> /etc/hhvm/php.ini
 RUN rm -rf /tmp/* /var/tmp/*
 
 # Define mountable directories.
-VOLUME ["/usr/share/nginx/www","/var/log/nginx/"]
+VOLUME ["/usr/share/nginx/www","/var/log/nginx"]
 
 # private expose
 EXPOSE 80

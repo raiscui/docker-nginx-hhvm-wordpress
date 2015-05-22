@@ -26,7 +26,10 @@ ADD https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar /u
 RUN chmod +x /usr/local/bin/wp
 
 # Syslog setup
-RUN sed -i '/source s_src {/,/};/d' /etc/syslog-ng/syslog-ng.conf
+RUN sed -i '/source s_src {/,/};/d' /etc/syslog-ng/syslog-ng.conf && \
+    sed -i '/destination d_console { usertty("root"); };/d' /etc/syslog-ng/syslog-ng.conf && \
+    sed -i '/log { source(s_src); filter(f_crit); destination(d_console); };/d' /etc/syslog-ng/syslog-ng.conf
+
 COPY etc/syslog-ng/conf.d/sources.conf /etc/syslog-ng/conf.d/sources.conf
 
 # nginx config

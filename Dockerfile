@@ -42,11 +42,14 @@ RUN mkdir /etc/service/nginx
 COPY etc/service/nginx/run /etc/service/nginx/run
 RUN chmod +x /etc/service/nginx/run
 
+# HHVM setup
 RUN mkdir /etc/service/hhvm
 COPY etc/service/hhvm/run /etc/service/hhvm/run
 RUN chmod +x /etc/service/hhvm/run
 
 RUN sudo /usr/share/hhvm/install_fastcgi.sh
+
+RUN chown -R www-data:www-data /var/www
 
 # Send all PHP errors to syslog
 RUN echo 'error_log = syslog' >> /etc/php5/cli/php.ini

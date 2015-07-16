@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Make sure nginx is started before we start
+sv start nginx || exit
+
+exec hhvm --user www-data --mode server -vServer.Type=fastcgi -vServer.Port=9000

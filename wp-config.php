@@ -84,7 +84,7 @@ $table_prefix  = 'wp_';
  * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
  * language support.
  */
-define('WP_CACHE',true);
+define('WP_CACHE', true);
 define ('WPLANG', 'zh_CN');
 
 /**
@@ -104,6 +104,7 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
 $plugins = get_option( 'active_plugins' );
 if ( count( $plugins ) === 0 ) {
   require_once(ABSPATH .'/wp-admin/includes/plugin.php');
